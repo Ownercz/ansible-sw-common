@@ -1,0 +1,14 @@
+
+---
+- name: Install common tools for Ubuntu
+  apt:
+    name: nano,htop,iftop,iotop,rsync,git,tmux,screen
+    state: present
+  when: ansible_distribution == "Ubuntu"
+
+
+- name: Install common tools for CentOS
+  yum:
+    name: nano,htop,iftop,iotop,rsync,git,tmux,screen
+    state: present
+    when: ansible_distribution == "CentOS"
